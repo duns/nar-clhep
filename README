@@ -1,0 +1,15 @@
+This project attempts to compile and link a "single" static library
+of CLHEP (http://cern.ch/clhep) using the maven-nar-plugin.
+
+The checkout of this project ONLY contains the file(s) necessary
+to compile with NAR. The sources you need to overlay for the 
+clhep version you want to compile. 
+
+Run "mvn" and look for the static library in (for example):
+
+2.0.4.5/target/nar/gnu/x86_64-MacOSX-g++/target/lib/libCLHEP.a
+
+This example was (for the moment) only tested on x86-MacOSX-g++.
+
+Mark Donszelmann (Mark.Donszelmann@gmail.com)
+
