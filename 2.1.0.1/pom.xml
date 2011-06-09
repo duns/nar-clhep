@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ch.cern</groupId>
+  <artifactId>clhep</artifactId>
+  <packaging>nar</packaging>
+  
+  <name>NAR version of CLHEP</name>
+  <version>2.1.0.1-SNAPSHOT</version>
+  <description>
+    CLHEP
+  </description>
+  <url>http://cern.ch/clhep</url>
+
+  <properties>
+    <skipTests>true</skipTests>
+  </properties>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <id>duns-maven-snapshots</id>
+          <name>Duns' Maven Snapshots</name>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+          <url>http://duns.github.com/maven-snapshots</url>
+        </pluginRepository>
+      </pluginRepositories>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+      <plugin>
+        <artifactId>maven-nar-plugin</artifactId>
+        <version>2.1-SNAPSHOT</version>
+        <extensions>true</extensions>
+        <configuration>
+          <gnuSourceDirectory>CLHEP</gnuSourceDirectory>
+          <libraries>
+            <library>
+              <type>static</type>
+            </library>
+          </libraries>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
